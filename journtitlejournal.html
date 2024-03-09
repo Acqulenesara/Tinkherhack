@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOURNIFY</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #5f3c3c;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            
+        }
+
+        header img {
+            max-width: 100%;
+            height: 5em;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        header .mood-quote {
+            font-style: italic;
+            font-size: 16px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(175, 5, 5, 0.305);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #462121;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+       
+        
+        <h1><img src="journify.png" alt="">JOURNIFY</h1>
+        <p class="mood-quote">"Your journey to happiness begins here."</p>
+        
+    </header>
+
+    <form id="journalForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" rows="4" required></textarea>
+
+        <button type="button" onclick="addEntry()">Add Entry</button>
+    </form>
+
+    <section id="journalEntries">
+        <!-- Entries will be displayed here -->
+    </section>
+
+    <script>
+        function addEntry() {
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+
+            if (title && content) {
+                const entryElement = document.createElement('div');
+                entryElement.innerHTML = `<h3>${title}</h3><p>${content}</p>`;
+                document.getElementById('journalEntries').appendChild(entryElement);
+
+                // Clear form fields
+                document.getElementById('title').value = '';
+                document.getElementById('content').value = '';
+            } else {
+                alert('Please fill in both title and content.');
+            }
+        }
+    </script>
+</body>
+</html>
