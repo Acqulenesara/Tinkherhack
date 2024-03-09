@@ -82,7 +82,7 @@
     <header>
        
         
-        <h1><img src="journify.png" alt="">JOURNIFY</h1>
+        <h1><img src="D:\Tinkherhack\journ.png" alt="">JOURNIFY</h1>
         <p class="mood-quote">"Your journey to happiness begins here."</p>
         
     </header>
@@ -100,7 +100,16 @@
     <section id="journalEntries">
         <!-- Entries will be displayed here -->
     </section>
-
+    <form>
+        <label for="category">Select Category:</label>
+        <select id="category" name="category">
+            <option value="professional">Professional</option>
+            <option value="travel">Travel</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <!-- Add more options as needed -->
+        </select>
+    </form>
     <script>
         function addEntry() {
             const title = document.getElementById('title').value;
@@ -121,3 +130,4 @@
     </script>
 </body>
 </html>
+
