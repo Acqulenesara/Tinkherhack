@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Upload</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #ab8888;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #uploadedMedia {
+            margin-top: 20px;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            display: block;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Media Upload</h1>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="photo">Upload Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+        <br>
+
+        <label for="video">Upload Video:</label>
+        <input type="file" id="video" name="video" accept="video/*">
+        <br>
+
+        
+        <a href="#">SUBMIT</a>
+    </form>
+
+    <!-- Display uploaded media here -->
+    <div id="uploadedMedia"></div>
+
+    <script>
+         document.getElementById('photo').addEventListener('change', function(event) {
+            const fileInput = event.target;
+            const preview = document.getElementById('uploadedMedia');
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.maxWidth = '100%';
+                    img.style.height = 'auto';
+                    preview.innerHTML = ''; // Clear previous content
+                    preview.appendChild(img);
+                };
+
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        });
+
+        document.getElementById('video').addEventListener('change', function(event) {
+            const fileInput = event.target;
+            const preview = document.getElementById('uploadedMedia');
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const video = document.createElement('video');
+                    video.src = e.target.result;
+                    video.controls = true;
+                    video.style.maxWidth = '100%';
+                    preview.innerHTML = ''; // Clear previous content
+                    preview.appendChild(video);
+                };
+
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        });
+    </script>
+
+</body>
+</html>
