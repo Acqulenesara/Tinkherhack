@@ -30,6 +30,9 @@ CSS
 JavaScript
 
 Logo Creation:
+
+
+
 ![image](https://github.com/Acqulenesara/Tinkherhack/assets/128407260/79340596-db4a-4df0-a073-08de6a00bff4)
 
 Our unique logo was crafted using the innovative ideogram.io and gravitywrite AI bots, reflecting the essence of JOURNIFY - a fusion of creativity and technology.
