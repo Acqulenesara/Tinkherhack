@@ -1,3 +1,5 @@
+JOURNIFY
+
 WHAT MAKES JOURNIFY DIFFERENT?
 Everyday Note in the Journal:
 Users can use the site for self-reflection and personal development by logging in and writing text entries in their journals daily.
