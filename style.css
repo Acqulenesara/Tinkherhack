@@ -1,4 +1,4 @@
-{
+*{
     margin :0;
     padding:0;
 
@@ -93,9 +93,82 @@ background: transparent;
     border-bottom-right-radius:5px;
 
 }
-.btn: focus{
+.btn:focus{
     outline:none;
 }
 .srch:focus{
     outline:none;
+}
+
+.quote-container {
+    width: 80%;
+    max-width: 600px; /* Adjust the width as per your design */
+    margin: 50px auto; /* Adjust the margin as per your design */
+    background-color: #fff; /* Set your background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    text-align: center;
+    animation: pullUp 1s forwards;
+    animation: pullDown 1s forwards;
+    animation: bounce 1s forwards;
+}
+
+
+
+/* Quote Text Styles */
+
+.quote-text {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+/* ... Your existing styles ... */
+
+.quote-text {
+    font-size: 24px;
+    color: #333; /* Set your text color */
+    margin: 0;
+}
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.pull-up {
+    animation: pullUp 1s forwards;
+}
+
+@keyframes pullUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.pull-down {
+    animation: pullDown 1s forwards;
+}
+
+@keyframes pullDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
