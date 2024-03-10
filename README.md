@@ -22,5 +22,5 @@ STACKS USED
 -CSS
 -JS
 
--The logo for our website was built using the ai bots ideogram.io and garvitywrite.
+-The logo for our website was built using the ai bots ideogram.io and gravitywrite.
 
